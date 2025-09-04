@@ -8,7 +8,7 @@ export async function uploadPrediction({ name = "", age = "", file }) {
     // IMPORTANT: backend expects the file field name "fingerprint"
     form.append("fingerprint", file);
 
-    const res = await fetch(`${API_BASE}/predict`, {
+    const res = await fetch(`${API_BASE}/api/predict`, {
       method: "POST",
       body: form,
     });
