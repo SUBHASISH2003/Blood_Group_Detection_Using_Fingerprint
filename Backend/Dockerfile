@@ -15,7 +15,8 @@ RUN npm ci --only=production || npm install --production
 
 # 5) Install Python deps
 COPY requirements.txt ./requirements.txt
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir -r requirements.txt
 
 # 6) Copy the rest of the backend (routes, services, python/, uploads/, etc.)
 COPY . .
